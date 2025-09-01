@@ -1,0 +1,22 @@
+stages:
+  - build
+  - validate
+
+pages:
+  stage: build
+  script:
+    - pip install mkdocs-material -q
+    - mkdocs build
+  artifacts:
+    paths:
+      - site
+  only:
+    - main
+
+content-validation:
+  stage: validate
+  script:
+    - echo "开始内容验证..."
+    - python scripts/validate_structure.py
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
