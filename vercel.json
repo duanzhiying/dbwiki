@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "python3 -m pip install -r requirements.txt && mkdocs build --clean",
+  "buildCommand": "python3 -m pip install -r requirements.txt && python3 -m mkdocs build --clean",
   "outputDirectory": "site",
   "env": {
     "PYTHON_VERSION": "3.9"
