@@ -11,6 +11,8 @@ status: approved
 ---
 
 # GROUP BY子句使用错误
+> 作者：teacher
+
 
 ## ❌ 错误代码示例
 ```sql
