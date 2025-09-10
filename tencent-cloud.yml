@@ -1,0 +1,43 @@
+# 腾讯云静态网站托管配置
+version: 1.0
+name: dbwiki
+description: 数据库课程实验资源平台
+
+# 构建配置
+build:
+  # 构建命令
+  command: |
+    python3 -m pip install -r requirements.txt
+    python3 -m mkdocs build --clean
+  
+  # 输出目录
+  output_dir: site
+  
+  # Python版本
+  python_version: 3.9
+
+# 部署配置
+deploy:
+  # 触发分支
+  trigger_branch: main
+  
+  # 自动部署
+  auto_deploy: true
+  
+  # 构建环境
+  environment: python3.9
+
+# 网站配置
+site:
+  # 网站标题
+  title: 数据库课程实验资源平台
+  
+  # 网站描述
+  description: 数字化转型背景下数据库课程实验教学资源的共建共享
+  
+  # 支持的功能
+  features:
+    - 搜索
+    - 代码高亮
+    - 响应式设计
+    - Material主题
