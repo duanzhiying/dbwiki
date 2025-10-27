@@ -62,15 +62,15 @@ SELECT * FROM SC_U;
 
 如下，显示触发器已经存在（即运行成功）。
 
-![8ddc8a93d93d6937de6fe31b0145d04.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/67570f30-1dd0-4935-b2cc-e73dd20d58f3.png)
+![8ddc8a93d93d6937de6fe31b0145d04.png](../assets/images/4_excellent_labs/67570f30-1dd0-4935-b2cc-e73dd20d58f3.png)
 
 测试触发器成功
 
-![96566b67d9f6749aa00111f0d6e81cf.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/44955985-8476-4d54-9a6b-eea69e9c803f.png)
+![96566b67d9f6749aa00111f0d6e81cf.png](../assets/images/4_excellent_labs/44955985-8476-4d54-9a6b-eea69e9c803f.png)
 
 测试两次，示例：Sno='20180001'，Cno='81001'
 
-![539d5ffff7b47bceb16b90b5f08747c.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/3b7933ef-5bf2-43bc-a507-9b55e54b46be.png)
+![539d5ffff7b47bceb16b90b5f08747c.png](../assets/images/4_excellent_labs/3b7933ef-5bf2-43bc-a507-9b55e54b46be.png)
 
 ### 3. 注意事项
     
@@ -133,11 +133,11 @@ SELECT * FROM StudentInsertLog;
     
 触发器实现与验证成功
 
-![32e67ab9ec497abaa7888a5b272ac74.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/7a1f388a-ee3f-4bb6-8909-f7a8e08e046f.png)
+![32e67ab9ec497abaa7888a5b272ac74.png](../assets/images/4_excellent_labs/7a1f388a-ee3f-4bb6-8909-f7a8e08e046f.png)
 
 实现结果：
 
-![286df00d682e61ef6758ee27a8bc151.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/dd188231-e132-4d06-aec0-4598b2d3d628.png)
+![286df00d682e61ef6758ee27a8bc151.png](../assets/images/4_excellent_labs/dd188231-e132-4d06-aec0-4598b2d3d628.png)
 
 ### 3. 注意事项
     
@@ -206,8 +206,8 @@ SELECT * FROM Teacher WHERE Eno = 'T001';
 
 ### 2. 运行示例
     
-![4.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/5b065250-5d19-487e-b505-852de4f4e922.png)
-![5.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/4cca4577-f101-4b88-bfe7-bcad5458cf41.png)
+![4.png](../assets/images/4_excellent_labs/5b065250-5d19-487e-b505-852de4f4e922.png)
+![5.png](../assets/images/4_excellent_labs/4cca4577-f101-4b88-bfe7-bcad5458cf41.png)
 
 
 ### 3. 注意事项
@@ -289,7 +289,7 @@ DELIMITER ;
 
 ### 2. 运行示例
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/e237bacc-b2c1-4394-8b1f-3ac8f1dc3db9.png)
+![image.png](../assets/images/4_excellent_labs/e237bacc-b2c1-4394-8b1f-3ac8f1dc3db9.png)
 
 ### 3. 注意事项
 
@@ -343,4 +343,4 @@ SELECT @gpa AS GPA;
 
 ### 2. 运行示例
 
-![image.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/1X3lE5yLmRQg4lJb/img/f0e31226-766d-4ea8-a33b-7fcb72e035e3.png)
+![image.png](../assets/images/4_excellent_labs/f0e31226-766d-4ea8-a33b-7fcb72e035e3.png)
