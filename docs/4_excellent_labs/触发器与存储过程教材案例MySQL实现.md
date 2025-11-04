@@ -15,13 +15,13 @@ status: approved
 
 > 所用教材：王珊 杜小勇 陈红 高等教育出版社《数据库系统概论》
 
-# 一、触发器
+## 一、触发器
 
-## 例5.18
+### 例5.18
 
 > **[例5.18]** 当对表SC的Grade属性进行修改时，若分数增加了10%，则将此次操作记录到另一个表 SC_U （Sno CHAR (8),Cno CHAR (5),Oldgrade SMALLINT,Newgrade SMALLINT）中。其中，Oldgrade是修改前的分数，Newgrade是修改后的分数。运行触发器之前需要创建SC_U表。
 
-### 1. MySQL语句
+#### 1. MySQL语句
     
 
 ```SQL
@@ -57,7 +57,7 @@ WHERE Sno = '20180001' AND Cno = '81001';
 SELECT * FROM SC_U;  
 ```
 
-### 2. 运行示例
+#### 2. 运行示例
     
 
 如下，显示触发器已经存在（即运行成功）。
@@ -72,7 +72,7 @@ SELECT * FROM SC_U;
 
 ![539d5ffff7b47bceb16b90b5f08747c.png](../assets/images/4_excellent_labs/3b7933ef-5bf2-43bc-a507-9b55e54b46be.png)
 
-### 3. 注意事项
+#### 3. 注意事项
     
 
 1. 运行触发器之前需要创建SC_U表
@@ -83,11 +83,11 @@ SELECT * FROM SC_U;
 3. 注意书中是WHEN子句，而MySQL不支持在触发器定义中使用
 
 
-## 例5.19
+### 例5.19
 
 > [例5.19]将每次对表Student的插入操作所增加的学生个数记录到表Student Insert（numbers INT）中，运行触发器之前需要创建此表。
 
-### 1. MySQL语句
+#### 1. MySQL语句
     
 
 ```sql
@@ -129,7 +129,7 @@ INSERT INTO Student (Sno,Sname,Ssex,Sbirthdate,Smajor) VALUES
 SELECT * FROM StudentInsertLog;
 ```
 
-### 2. 运行示例
+#### 2. 运行示例
     
 触发器实现与验证成功
 
@@ -139,17 +139,17 @@ SELECT * FROM StudentInsertLog;
 
 ![286df00d682e61ef6758ee27a8bc151.png](../assets/images/4_excellent_labs/dd188231-e132-4d06-aec0-4598b2d3d628.png)
 
-### 3. 注意事项
+#### 3. 注意事项
     
 1. 此处MySQL不支持`REFERENCING NEW TABLE AS Delta`
 2. `FOR EACH STATEMENT`在MySQL触发器中不支持，使用`FOR EACH ROW`行级触发器
 3. 要注意插入数据应该在运行触发器之后进行，不然运行出来的表就是空表。
 
-## 例5.20
+### 例5.20
 
 > [例5.20]定义一个BEFORE行级触发器，为教师表Teacher定义完整性规则：教授的工资不得低于4000元，如果低于4000元，自动改为4000元.
 
-### 1. MySQL语句
+#### 1. MySQL语句
 
 说明：对于本题而言，应该创建两个BEFORE行级触发器，`BEFORE INSERT`和`BEFORE UPDATE`，即在插入和更新的时候都应该做工资检查。
 为了演示方便，此处只创建了BEFORE UPDATE触发器。
@@ -204,13 +204,13 @@ AND Job = '教授';
 SELECT * FROM Teacher WHERE Eno = 'T001';
 ```
 
-### 2. 运行示例
+#### 2. 运行示例
     
 ![4.png](../assets/images/4_excellent_labs/5b065250-5d19-487e-b505-852de4f4e922.png)
 ![5.png](../assets/images/4_excellent_labs/4cca4577-f101-4b88-bfe7-bcad5458cf41.png)
 
 
-### 3. 注意事项
+#### 3. 注意事项
     
 1. 删除书中的REFERENCING语句，直接使用 NEW 关键字
 2. 当创建包含多个语句的触发器时，需要临时更改语句分隔符。
@@ -219,13 +219,13 @@ SELECT * FROM Teacher WHERE Eno = 'T001';
     - 如果 Job 不是'教授'，触发器不会生效
     - 如果原工资已经 >=4000，触发器也不会生效
 
-# 二、存储过程
+## 二、存储过程
 
-## 例8.5
+### 例8.5
 
 > 创建存储过程，计算学生平均学分绩点
 
-### 1. MySQL语句
+#### 1. MySQL语句
 ```sql
 DELIMITER //
 CREATE PROCEDURE `CompGPA`(
@@ -287,15 +287,15 @@ END //
 DELIMITER ;
 ```
 
-### 2. 运行示例
+#### 2. 运行示例
 
 ![image.png](../assets/images/4_excellent_labs/e237bacc-b2c1-4394-8b1f-3ac8f1dc3db9.png)
 
-### 3. 注意事项
+#### 3. 注意事项
 
 需要注意变量的声明和添加异常处理，具体如下：
 
-#### DECLARE语句
+##### DECLARE语句
 
 MySQL的DECLARE语句支持一次性定义多个变量。
 
@@ -307,7 +307,7 @@ DECLARE variable_name1, variable_name2, ..., variable_namen data_type [DEFAULT d
 2. 变量声明必须放在存储程序体的开头，在任何可执行语句之前。
 3. 每个变量可以有自己的DEFAULT值，但需要在单独的DECLARE语句中声明。
 
-#### 添加异常处理
+##### 添加异常处理
 
 - 当游标读取完所有数据后，再次执行`FETCH`时会触发`NOT FOUND`条件。
 - 若未声明异常处理，该条件会升级为错误 1329。
@@ -331,16 +331,16 @@ IF done THEN
 END IF;
 ```
 
-## 例8.6
+### 例8.6
 
 > 查询学号 20180001 的学生的平均学分绩点GPA
 
-### 1. MySQL语句
+#### 1. MySQL语句
 ```sql
 CALL CompGPA('20180001', @gpa);
 SELECT @gpa AS GPA;
 ```
 
-### 2. 运行示例
+#### 2. 运行示例
 
 ![image.png](../assets/images/4_excellent_labs/f0e31226-766d-4ea8-a33b-7fcb72e035e3.png)

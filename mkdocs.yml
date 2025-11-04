@@ -22,6 +22,7 @@ nav:
   - 实验示范: 
     - 基础查询: 4_excellent_labs/lab1_基础查询.md
     - 触发器与存储过程：教材案例的MySQL实现: 4_excellent_labs/触发器与存储过程教材案例MySQL实现.md
+    - 关系数据库：外部数据导入: 4_excellent_labs/外部数据导入方法.md
   - 课设案例: 
     - 图书系统: 5_course_designs/library_管理系统.md
 
