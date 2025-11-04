@@ -827,7 +827,7 @@
 
 
 
-<h1 id="_1">关系数据库：外部数据导入</h1>
+<h1 id="_1">关系数据库：外部数据导入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：庄文博，原文来源：<a href="https://flowus.cn/share/f34dbed7-6922-4417-9665-4fe878291e84">FlowUs 数据库：外部数据导入</a>，本文按课程规范整理并补充注意事项。</p>
 </blockquote>
@@ -837,7 +837,7 @@
 <li>方案二：使用LOAD DATA INFILE语句在命令行导入csv文件</li>
 <li>方案三：使用程序设计语言（如Python）导入数据</li>
 </ul>
-<h2 id="navicatexcel">方案一、使用Navicat客户端工具导入Excel表格</h2>
+<h2 id="navicatexcel">方案一、使用Navicat客户端工具导入Excel表格<a class="headerlink" href="#navicatexcel" title="Permanent link">&para;</a></h2>
 <p>1、连接并且创建数据库：</p>
 <p><img alt="navicat_step01_connect.png" src="../../assets/images/4_excellent_labs/mysql_%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/navicat_step01_connect.png" /></p>
 <p>2、右键表→导入向导，选择Excel文件，点击下一步
@@ -861,7 +861,7 @@
 <p>当出现已添加，错误为0的时候，导入成功。</p>
 <p>10、检查导入情况：</p>
 <p><img alt="navicat_step11_check_result.png" src="../../assets/images/4_excellent_labs/mysql_%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/navicat_step11_check_result.png" /></p>
-<h2 id="load-data-infilecsv">方案二：使用LOAD DATA INFILE语句在命令行导入csv文件</h2>
+<h2 id="load-data-infilecsv">方案二：使用LOAD DATA INFILE语句在命令行导入csv文件<a class="headerlink" href="#load-data-infilecsv" title="Permanent link">&para;</a></h2>
 <p>首先，命令行直接导入只支持<code>.sql</code>文件和<code>.csv</code>文件</p>
 <p>一、文件转换</p>
 <p>将你获取到的xsl、xslx格式的文件另存为，转换为CSV UTF-8编码格式的文件</p>
@@ -898,7 +898,7 @@
 <p><img alt="cmd_error_1290_fix.png" src="../../assets/images/4_excellent_labs/mysql_%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/cmd_error_1290_fix.png" /></p>
 <p>注意路径用<code>/</code>斜杠</p>
 <p><img alt="cmd_path_slash_note.png" src="../../assets/images/4_excellent_labs/mysql_%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/cmd_path_slash_note.png" /></p>
-<h2 id="python">使用程序设计语言（如Python）导入数据</h2>
+<h2 id="python">使用程序设计语言（如Python）导入数据<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
 <p>提示：这是一个较为简陋的程序，不保证可以处理全部需求，没有经过严谨测试，只确认可以处理正常的表。</p>
 <p>一、工具的安装</p>
 <p>1、确保你会使用pip安装第三方库，会在pip慢的时候自行换源（网上可以搜的到）。</p>

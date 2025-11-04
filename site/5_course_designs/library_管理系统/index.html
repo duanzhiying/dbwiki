@@ -1221,14 +1221,14 @@
 
 
 
-<h1 id="_1">课程设计：图书管理系统（学生版）</h1>
+<h1 id="_1">课程设计：图书管理系统（学生版）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：student</p>
 </blockquote>
-<h2 id="_2">项目概述</h2>
+<h2 id="_2">项目概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>设计并实现一个完整的图书管理系统，包括图书信息管理、借阅管理、用户管理等功能。</p>
-<h2 id="_3">需求分析</h2>
-<h3 id="_4">功能需求</h3>
+<h2 id="_3">需求分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">功能需求<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>图书管理</strong></li>
 <li>图书信息的增删改查</li>
@@ -1252,15 +1252,15 @@
 <li>用户信息管理</li>
 <li>借阅权限控制</li>
 </ol>
-<h3 id="_5">非功能需求</h3>
+<h3 id="_5">非功能需求<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>支持并发访问</li>
 <li>数据完整性保证</li>
 <li>系统响应时间 &lt; 2秒</li>
 <li>支持1000+用户同时使用</li>
 </ul>
-<h2 id="_6">数据库设计</h2>
-<h3 id="e-r">E-R图设计</h3>
+<h2 id="_6">数据库设计<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="e-r">E-R图设计<a class="headerlink" href="#e-r" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>用户 (User)
 ├── 用户ID (主键)
 ├── 用户名
@@ -1285,7 +1285,7 @@
 ├── 应还时间
 └── 实际归还时间
 </code></pre></div>
-<h3 id="_7">表结构设计</h3>
+<h3 id="_7">表结构设计<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 用户表</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
@@ -1329,8 +1329,8 @@
 <span class="w">    </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">books</span><span class="p">(</span><span class="n">book_id</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></div>
-<h2 id="_8">核心功能实现</h2>
-<h3 id="1">1. 图书借阅</h3>
+<h2 id="_8">核心功能实现<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 图书借阅<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 借阅图书</span>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">borrow_records</span><span class="w"> </span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">book_id</span><span class="p">,</span><span class="w"> </span><span class="n">borrow_date</span><span class="p">,</span><span class="w"> </span><span class="n">due_date</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w"> </span><span class="n">CURDATE</span><span class="p">(),</span><span class="w"> </span><span class="n">DATE_ADD</span><span class="p">(</span><span class="n">CURDATE</span><span class="p">(),</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="k">DAY</span><span class="p">));</span>
@@ -1338,7 +1338,7 @@
 <span class="c1">-- 更新图书状态</span>
 <span class="k">UPDATE</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;borrowed&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">book_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="2">2. 图书归还</h3>
+<h3 id="2">2. 图书归还<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 归还图书</span>
 <span class="k">UPDATE</span><span class="w"> </span><span class="n">borrow_records</span><span class="w"> </span>
 <span class="k">SET</span><span class="w"> </span><span class="n">return_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CURDATE</span><span class="p">(),</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;returned&#39;</span>
@@ -1347,7 +1347,7 @@
 <span class="c1">-- 更新图书状态</span>
 <span class="k">UPDATE</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;available&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">book_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">101</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="3">3. 逾期检查</h3>
+<h3 id="3">3. 逾期检查<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 查询逾期记录</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">title</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">borrow_records</span><span class="w"> </span><span class="n">br</span>
@@ -1355,51 +1355,51 @@
 <span class="k">JOIN</span><span class="w"> </span><span class="n">books</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="n">book_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">book_id</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="n">due_date</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">CURDATE</span><span class="p">()</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">br</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;active&#39;</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="_9">系统优化</h2>
-<h3 id="_10">索引设计</h3>
+<h2 id="_9">系统优化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">索引设计<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 为常用查询字段创建索引</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_books_title</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">books</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_books_author</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">books</span><span class="p">(</span><span class="n">author</span><span class="p">);</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_borrow_records_user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">borrow_records</span><span class="p">(</span><span class="n">user_id</span><span class="p">);</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_borrow_records_due_date</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">borrow_records</span><span class="p">(</span><span class="n">due_date</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="_11">性能优化</h3>
+<h3 id="_11">性能优化<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ol>
 <li>使用合适的索引</li>
 <li>优化查询语句</li>
 <li>实现分页查询</li>
 <li>使用连接池</li>
 </ol>
-<h2 id="_12">测试用例</h2>
-<h3 id="_13">功能测试</h3>
+<h2 id="_12">测试用例<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">功能测试<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
 <ol>
 <li>用户注册和登录</li>
 <li>图书信息的增删改查</li>
 <li>图书借阅和归还</li>
 <li>借阅记录查询</li>
 </ol>
-<h3 id="_14">性能测试</h3>
+<h3 id="_14">性能测试<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <ol>
 <li>并发借阅测试</li>
 <li>大数据量查询测试</li>
 <li>系统响应时间测试</li>
 </ol>
-<h2 id="_15">项目总结</h2>
-<h3 id="_16">技术收获</h3>
+<h2 id="_15">项目总结<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="_16">技术收获<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
 <ul>
 <li>掌握了完整的数据库设计流程</li>
 <li>学会了E-R建模和表结构设计</li>
 <li>理解了数据库约束和索引的作用</li>
 <li>掌握了复杂SQL查询的编写</li>
 </ul>
-<h3 id="_17">项目亮点</h3>
+<h3 id="_17">项目亮点<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <ul>
 <li>完整的需求分析和系统设计</li>
 <li>规范的数据库设计</li>
 <li>完善的错误处理机制</li>
 <li>良好的用户体验设计</li>
 </ul>
-<h2 id="_18">扩展功能</h2>
+<h2 id="_18">扩展功能<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
 <ul>
 <li>图书推荐系统</li>
 <li>用户借阅统计</li>

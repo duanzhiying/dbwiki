@@ -995,20 +995,20 @@
 
 
 
-<h1 id="_1">事务处理：死锁避免（教师版）</h1>
+<h1 id="_1">事务处理：死锁避免（教师版）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：teacher</p>
 </blockquote>
-<h2 id="_2">问题描述</h2>
+<h2 id="_2">问题描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在高并发数据库系统中，死锁是常见的问题。当多个事务相互等待对方释放锁时，就会发生死锁，导致系统性能下降甚至服务中断。</p>
-<h2 id="_3">死锁产生的原因</h2>
+<h2 id="_3">死锁产生的原因<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>资源竞争</strong>: 多个事务同时访问相同的数据资源</li>
 <li><strong>锁顺序不一致</strong>: 不同事务以不同顺序获取锁</li>
 <li><strong>长时间持有锁</strong>: 事务执行时间过长，锁持有时间过久</li>
 </ol>
-<h2 id="_4">预防策略</h2>
-<h3 id="1">1. 资源有序分配</h3>
+<h2 id="_4">预防策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 资源有序分配<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 错误示例：可能导致死锁</span>
 <span class="c1">-- 事务A: 先锁用户表，再锁订单表</span>
 <span class="c1">-- 事务B: 先锁订单表，再锁用户表</span>
@@ -1020,33 +1020,33 @@
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span>
 <span class="k">COMMIT</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="2">2. 设置锁超时</h3>
+<h3 id="2">2. 设置锁超时<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- MySQL</span>
 <span class="k">SET</span><span class="w"> </span><span class="n">innodb_lock_wait_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 
 <span class="c1">-- PostgreSQL</span>
 <span class="k">SET</span><span class="w"> </span><span class="n">lock_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10s&#39;</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="3">3. 使用合适的隔离级别</h3>
+<h3 id="3">3. 使用合适的隔离级别<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 根据业务需求选择合适的隔离级别</span>
 <span class="c1">-- READ COMMITTED: 减少锁持有时间</span>
 <span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="_5">检测和解决</h2>
-<h3 id="_6">死锁检测</h3>
+<h2 id="_5">检测和解决<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">死锁检测<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- MySQL 查看死锁信息</span>
 <span class="k">SHOW</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="n">INNODB</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span>
 
 <span class="c1">-- PostgreSQL 查看锁等待</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_locks</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">granted</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="_7">死锁处理</h3>
+<h3 id="_7">死锁处理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>自动回滚</strong>: 数据库自动选择一个事务进行回滚</li>
 <li><strong>重试机制</strong>: 应用层实现重试逻辑</li>
 <li><strong>监控告警</strong>: 建立死锁监控和告警机制</li>
 </ol>
-<h2 id="_8">最佳实践</h2>
+<h2 id="_8">最佳实践<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li>保持事务简短</li>
 <li>按固定顺序访问资源</li>
@@ -1054,7 +1054,7 @@
 <li>考虑使用乐观锁替代悲观锁</li>
 <li>建立完善的监控体系</li>
 </ol>
-<h2 id="_9">扩展思考</h2>
+<h2 id="_9">扩展思考<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>如何设计重试机制？</li>
 <li>乐观锁和悲观锁的适用场景？</li>

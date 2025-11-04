@@ -995,40 +995,40 @@
 
 
 
-<h1 id="_1">电商平台数据库查询优化实战</h1>
+<h1 id="_1">电商平台数据库查询优化实战<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：teacher</p>
 </blockquote>
-<h2 id="_2">📊 业务场景</h2>
+<h2 id="_2">📊 业务场景<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>某电商平台商品列表页在高峰期响应缓慢，用户体验差。需要优化分页查询性能。</p>
-<h2 id="_3">🔍 问题分析</h2>
-<h3 id="_4">原始查询</h3>
+<h2 id="_3">🔍 问题分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">原始查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 问题查询：使用OFFSET进行分页</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">category_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="k">OFFSET</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="_5">性能问题</h3>
+<h3 id="_5">性能问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>OFFSET性能差</strong>: 需要跳过1000条记录，性能随偏移量线性下降</li>
 <li><strong>索引利用不充分</strong>: 没有合适的复合索引</li>
 <li><strong>内存消耗大</strong>: 需要加载大量不需要的数据</li>
 </ol>
-<h2 id="_6">🔧 优化方案</h2>
-<h3 id="1">1. 使用游标分页</h3>
+<h2 id="_6">🔧 优化方案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 使用游标分页<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 优化后：使用ID游标分页</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">category_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span>
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="2">2. 创建复合索引</h3>
+<h3 id="2">2. 创建复合索引<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 为查询创建复合索引</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_products_category_id_created_at</span><span class="w"> </span>
 <span class="k">ON</span><span class="w"> </span><span class="n">products</span><span class="p">(</span><span class="n">category_id</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="w"> </span><span class="k">DESC</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
 </code></pre></div>
-<h3 id="3">3. 查询重写</h3>
+<h3 id="3">3. 查询重写<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">-- 进一步优化：只查询必要字段</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">image_url</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">products</span><span class="w"> </span>
@@ -1036,20 +1036,20 @@
 <span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">DESC</span><span class="w"> </span>
 <span class="k">LIMIT</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="_7">📈 优化效果</h2>
+<h2 id="_7">📈 优化效果<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>响应时间</strong>: 从2.5秒降低到50毫秒</li>
 <li><strong>并发能力</strong>: 支持1000+并发用户</li>
 <li><strong>资源消耗</strong>: CPU使用率降低60%</li>
 </ul>
-<h2 id="_8">💡 关键经验</h2>
+<h2 id="_8">💡 关键经验<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>避免大偏移量</strong>: 使用游标分页替代OFFSET</li>
 <li><strong>合理设计索引</strong>: 根据查询模式创建复合索引</li>
 <li><strong>查询字段优化</strong>: 只查询必要的字段</li>
 <li><strong>监控和测试</strong>: 建立性能监控体系</li>
 </ol>
-<h2 id="_9">扩展思考</h2>
+<h2 id="_9">扩展思考<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li>如何处理深度分页问题？</li>
 <li>如何设计高效的搜索功能？</li>

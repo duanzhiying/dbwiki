@@ -881,33 +881,33 @@
 
 
 
-<h1 id="group-by">GROUP BY子句使用错误</h1>
+<h1 id="group-by">GROUP BY子句使用错误<a class="headerlink" href="#group-by" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：teacher</p>
 </blockquote>
-<h2 id="_1">❌ 错误代码示例</h2>
+<h2 id="_1">❌ 错误代码示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="_2">✅ 正确写法</h2>
+<h2 id="_2">✅ 正确写法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">department</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">count</span><span class="w"> </span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">students</span><span class="w"> </span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">department</span><span class="p">;</span>
 </code></pre></div>
-<h2 id="_3">💡 解析说明</h2>
+<h2 id="_3">💡 解析说明<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在包含聚合函数的查询中，所有非聚合列都必须出现在GROUP BY子句中。</p>
-<h2 id="_4">错误原因分析</h2>
+<h2 id="_4">错误原因分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>语法规则</strong>: SQL标准要求，当使用聚合函数时，SELECT子句中的非聚合列必须出现在GROUP BY子句中</li>
 <li><strong>数据库实现</strong>: 不同数据库对此规则的处理可能不同，但都应该遵循标准</li>
 <li><strong>常见场景</strong>: 在统计查询中经常出现此类错误</li>
 </ol>
-<h2 id="_5">学习要点</h2>
+<h2 id="_5">学习要点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>理解聚合函数的工作原理</li>
 <li>掌握GROUP BY子句的使用规则</li>
 <li>学会识别和避免此类语法错误</li>
 </ul>
-<h2 id="_6">扩展思考</h2>
+<h2 id="_6">扩展思考<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>如何设计复杂的统计查询？</li>
 <li>聚合函数还有哪些常见用法？</li>

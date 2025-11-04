@@ -1283,17 +1283,17 @@
 
 
 
-<h1 id="mysql">触发器与存储过程教材案例MySQL实现</h1>
+<h1 id="mysql">触发器与存储过程教材案例MySQL实现<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>作者：黄加慧,庄文博,徐艺榕</p>
 <p>所用教材：王珊 杜小勇 陈红 高等教育出版社《数据库系统概论》</p>
 </blockquote>
-<h2 id="_1">一、触发器</h2>
-<h3 id="518">例5.18</h3>
+<h2 id="_1">一、触发器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="518">例5.18<a class="headerlink" href="#518" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong>[例5.18]</strong> 当对表SC的Grade属性进行修改时，若分数增加了10%，则将此次操作记录到另一个表 SC_U （Sno CHAR (8),Cno CHAR (5),Oldgrade SMALLINT,Newgrade SMALLINT）中。其中，Oldgrade是修改前的分数，Newgrade是修改后的分数。运行触发器之前需要创建SC_U表。</p>
 </blockquote>
-<h4 id="1-mysql">1. MySQL语句</h4>
+<h4 id="1-mysql">1. MySQL语句<a class="headerlink" href="#1-mysql" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="cm">/*运行触发器之前需要创建SC_U表*/</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">SC_U</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">Sno</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
@@ -1325,14 +1325,14 @@
 <span class="k">WHERE</span><span class="w"> </span><span class="n">Sno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;20180001&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">Cno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;81001&#39;</span><span class="p">;</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">SC_U</span><span class="p">;</span><span class="w">  </span>
 </code></pre></div>
-<h4 id="2">2. 运行示例</h4>
+<h4 id="2">2. 运行示例<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>如下，显示触发器已经存在（即运行成功）。</p>
 <p><img alt="8ddc8a93d93d6937de6fe31b0145d04.png" src="../../assets/images/4_excellent_labs/67570f30-1dd0-4935-b2cc-e73dd20d58f3.png" /></p>
 <p>测试触发器成功</p>
 <p><img alt="96566b67d9f6749aa00111f0d6e81cf.png" src="../../assets/images/4_excellent_labs/44955985-8476-4d54-9a6b-eea69e9c803f.png" /></p>
 <p>测试两次，示例：Sno='20180001'，Cno='81001'</p>
 <p><img alt="539d5ffff7b47bceb16b90b5f08747c.png" src="../../assets/images/4_excellent_labs/3b7933ef-5bf2-43bc-a507-9b55e54b46be.png" /></p>
-<h4 id="3">3. 注意事项</h4>
+<h4 id="3">3. 注意事项<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>运行触发器之前需要创建SC_U表</p>
@@ -1345,11 +1345,11 @@
 <p>注意书中是WHEN子句，而MySQL不支持在触发器定义中使用</p>
 </li>
 </ol>
-<h3 id="519">例5.19</h3>
+<h3 id="519">例5.19<a class="headerlink" href="#519" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>[例5.19]将每次对表Student的插入操作所增加的学生个数记录到表Student Insert（numbers INT）中，运行触发器之前需要创建此表。</p>
 </blockquote>
-<h4 id="1-mysql_1">1. MySQL语句</h4>
+<h4 id="1-mysql_1">1. MySQL语句<a class="headerlink" href="#1-mysql_1" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="cm">/*创建StudentInsertLog表*/</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">StudentInsertLog</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">Numbers</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span>
@@ -1387,22 +1387,22 @@
 
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">StudentInsertLog</span><span class="p">;</span>
 </code></pre></div>
-<h4 id="2_1">2. 运行示例</h4>
+<h4 id="2_1">2. 运行示例<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
 <p>触发器实现与验证成功</p>
 <p><img alt="32e67ab9ec497abaa7888a5b272ac74.png" src="../../assets/images/4_excellent_labs/7a1f388a-ee3f-4bb6-8909-f7a8e08e046f.png" /></p>
 <p>实现结果：</p>
 <p><img alt="286df00d682e61ef6758ee27a8bc151.png" src="../../assets/images/4_excellent_labs/dd188231-e132-4d06-aec0-4598b2d3d628.png" /></p>
-<h4 id="3_1">3. 注意事项</h4>
+<h4 id="3_1">3. 注意事项<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>此处MySQL不支持<code>REFERENCING NEW TABLE AS Delta</code></li>
 <li><code>FOR EACH STATEMENT</code>在MySQL触发器中不支持，使用<code>FOR EACH ROW</code>行级触发器</li>
 <li>要注意插入数据应该在运行触发器之后进行，不然运行出来的表就是空表。</li>
 </ol>
-<h3 id="520">例5.20</h3>
+<h3 id="520">例5.20<a class="headerlink" href="#520" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>[例5.20]定义一个BEFORE行级触发器，为教师表Teacher定义完整性规则：教授的工资不得低于4000元，如果低于4000元，自动改为4000元.</p>
 </blockquote>
-<h4 id="1-mysql_2">1. MySQL语句</h4>
+<h4 id="1-mysql_2">1. MySQL语句<a class="headerlink" href="#1-mysql_2" title="Permanent link">&para;</a></h4>
 <p>说明：对于本题而言，应该创建两个BEFORE行级触发器，<code>BEFORE INSERT</code>和<code>BEFORE UPDATE</code>，即在插入和更新的时候都应该做工资检查。
 为了演示方便，此处只创建了BEFORE UPDATE触发器。</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">School</span><span class="w">                              </span><span class="cm">/*创建学院表*/</span>
@@ -1453,10 +1453,10 @@
 <span class="k">AND</span><span class="w"> </span><span class="n">Job</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;教授&#39;</span><span class="p">;</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Teacher</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Eno</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;T001&#39;</span><span class="p">;</span>
 </code></pre></div>
-<h4 id="2_2">2. 运行示例</h4>
+<h4 id="2_2">2. 运行示例<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h4>
 <p><img alt="4.png" src="../../assets/images/4_excellent_labs/5b065250-5d19-487e-b505-852de4f4e922.png" />
 <img alt="5.png" src="../../assets/images/4_excellent_labs/4cca4577-f101-4b88-bfe7-bcad5458cf41.png" /></p>
-<h4 id="3_2">3. 注意事项</h4>
+<h4 id="3_2">3. 注意事项<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h4>
 <ol>
 <li>删除书中的REFERENCING语句，直接使用 NEW 关键字</li>
 <li>当创建包含多个语句的触发器时，需要临时更改语句分隔符。</li>
@@ -1467,12 +1467,12 @@
 </ul>
 </li>
 </ol>
-<h2 id="_2">二、存储过程</h2>
-<h3 id="85">例8.5</h3>
+<h2 id="_2">二、存储过程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="85">例8.5<a class="headerlink" href="#85" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>创建存储过程，计算学生平均学分绩点</p>
 </blockquote>
-<h4 id="1-mysql_3">1. MySQL语句</h4>
+<h4 id="1-mysql_3">1. MySQL语句<a class="headerlink" href="#1-mysql_3" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">DELIMITER</span><span class="w"> </span><span class="o">//</span>
 <span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="o">`</span><span class="n">CompGPA</span><span class="o">`</span><span class="p">(</span>
 <span class="w">    </span><span class="k">IN</span><span class="w"> </span><span class="n">student_id</span><span class="w"> </span><span class="nb">CHAR</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>
@@ -1532,11 +1532,11 @@
 <span class="k">END</span><span class="w"> </span><span class="o">//</span>
 <span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
 </code></pre></div>
-<h4 id="2_3">2. 运行示例</h4>
+<h4 id="2_3">2. 运行示例<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
 <p><img alt="image.png" src="../../assets/images/4_excellent_labs/e237bacc-b2c1-4394-8b1f-3ac8f1dc3db9.png" /></p>
-<h4 id="3_3">3. 注意事项</h4>
+<h4 id="3_3">3. 注意事项<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h4>
 <p>需要注意变量的声明和添加异常处理，具体如下：</p>
-<h5 id="declare">DECLARE语句</h5>
+<h5 id="declare">DECLARE语句<a class="headerlink" href="#declare" title="Permanent link">&para;</a></h5>
 <p>MySQL的DECLARE语句支持一次性定义多个变量。</p>
 <div class="highlight"><pre><span></span><code><span class="k">DECLARE</span><span class="w"> </span><span class="n">variable_name1</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">variable_namen</span><span class="w"> </span><span class="n">data_type</span><span class="w"> </span><span class="p">[</span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">default_value</span><span class="p">];</span>
 </code></pre></div>
@@ -1545,7 +1545,7 @@
 <li>变量声明必须放在存储程序体的开头，在任何可执行语句之前。</li>
 <li>每个变量可以有自己的DEFAULT值，但需要在单独的DECLARE语句中声明。</li>
 </ol>
-<h5 id="_3">添加异常处理</h5>
+<h5 id="_3">添加异常处理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h5>
 <ul>
 <li>当游标读取完所有数据后，再次执行<code>FETCH</code>时会触发<code>NOT FOUND</code>条件。</li>
 <li>若未声明异常处理，该条件会升级为错误 1329。</li>
@@ -1561,15 +1561,15 @@
 <span class="w">  </span><span class="n">LEAVE</span><span class="w"> </span><span class="n">read_loop</span><span class="p">;</span>
 <span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
 </code></pre></div>
-<h3 id="86">例8.6</h3>
+<h3 id="86">例8.6<a class="headerlink" href="#86" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>查询学号 20180001 的学生的平均学分绩点GPA</p>
 </blockquote>
-<h4 id="1-mysql_4">1. MySQL语句</h4>
+<h4 id="1-mysql_4">1. MySQL语句<a class="headerlink" href="#1-mysql_4" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code><span class="k">CALL</span><span class="w"> </span><span class="n">CompGPA</span><span class="p">(</span><span class="s1">&#39;20180001&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">gpa</span><span class="p">);</span>
 <span class="k">SELECT</span><span class="w"> </span><span class="o">@</span><span class="n">gpa</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">GPA</span><span class="p">;</span>
 </code></pre></div>
-<h4 id="2_4">2. 运行示例</h4>
+<h4 id="2_4">2. 运行示例<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h4>
 <p><img alt="image.png" src="../../assets/images/4_excellent_labs/f0e31226-766d-4ea8-a33b-7fcb72e035e3.png" /></p>
 
 
