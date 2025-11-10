@@ -1,0 +1,1394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数字化转型背景下数据库课程实验教学资源的共建共享">
+      
+      
+        <meta name="author" content="覃修交">
+      
+      
+        <link rel="canonical" href="https://duanzhiying.github.io/dbwiki/4_excellent_labs/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+      
+      
+        <link rel="prev" href="../lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
+      
+      
+        <link rel="next" href="../SQL%20IDE%E5%AE%89%E8%A3%85/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>MySQL 安装与配置指南 - 数据库课程实验资源平台</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mysql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="数据库课程实验资源平台" class="md-header__button md-logo" aria-label="数据库课程实验资源平台" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数据库课程实验资源平台
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MySQL 安装与配置指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="数据库课程实验资源平台" class="md-nav__button md-logo" aria-label="数据库课程实验资源平台" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    数据库课程实验资源平台
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    错误SQL点评
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            错误SQL点评
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1_sql_pitfalls/syntax_groupby%E9%94%99%E8%AF%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    语法错误
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    企业案例
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            企业案例
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_enterprise_cases/ecommerce_%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    电商优化
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    避坑指南
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            避坑指南
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    事务处理
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    实验示范
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            实验示范
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基础查询
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    MySQL安装与配置指南
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    MySQL安装与配置指南
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 MySQL 服务器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 MySQL 服务器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 MySQL 服务器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据目录（Data Directory）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-and-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型与网络（Type and Networking）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounts-and-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      账户与角色（Accounts and Roles）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-windows-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 服务（Windows Service）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器文件权限（Server File Permissions）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例数据库（Sample Databases）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用配置（Apply Configuration）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置完成（Configuration Complete）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置 MySQL 环境变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      连接 MySQL 服务器 [可选]
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQL%20IDE%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL IDE安装
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MySQL%E5%AE%89%E8%A3%85FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MySQL安装FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    触发器与存储过程：教材案例的MySQL实现
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    关系数据库：外部数据导入
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    课设案例
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            课设案例
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_course_designs/library_%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    图书系统
+    
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 MySQL 服务器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 MySQL 服务器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 MySQL 服务器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据目录（Data Directory）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-and-networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型与网络（Type and Networking）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounts-and-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      账户与角色（Accounts and Roles）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-windows-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows 服务（Windows Service）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      服务器文件权限（Server File Permissions）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例数据库（Sample Databases）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用配置（Apply Configuration）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置完成（Configuration Complete）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      设置 MySQL 环境变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      连接 MySQL 服务器 [可选]
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>MySQL安装与配置指南</h1>
+
+<p>访问 <a href="https://dev.mysql.com/downloads/mysql/">MySQL Community Downloads 官网</a>，选择最新的 <code>8.4.x LTS</code>（长期支持）版本和 <code>Microsoft Windows</code> 平台，下载 <code>MSI Installer</code> 安装程序</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/mysql-community-downloads-1.png" /></p>
+<hr />
+<p>如果下载提示要求登录或注册，可以<strong>点击下方蓝色文字链接跳过</strong>，直接开始下载</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/mysql-community-downloads-2.png" /></p>
+<hr />
+<h2 id="mysql">安装 MySQL 服务器<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<p>打开 MySQL 安装程序，点击 <strong>"Next"</strong> 开始配置</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/setup-1.png" /></p>
+<hr />
+<p>勾选同意最终用户许可协议，点击 <strong>"Next"</strong> 继续</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/setup-2.png" /></p>
+<hr />
+<p>选择安装类型，一般选择 <strong>"Typical"</strong>（典型）即可，其他组件可以在需要时再进行安装</p>
+<div class="admonition warning">
+<p class="admonition-title">不建议更改默认安装路径</p>
+<p>如果选择 <strong>"Custom"</strong> 可以更改安装路径，但为了避免路径问题并方便故障排查，<strong>不建议更改默认安装路径！</strong></p>
+<ul>
+<li><strong>MySQL 及相关组件的默认安装目录（basedir）</strong>：<code>C:\Program Files\MySQL</code></li>
+<li><strong>MySQL 相关数据文件的默认存放目录（datadir）</strong>：<code>C:\ProgramData\MySQL</code></li>
+</ul>
+</div>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/setup-3.png" /></p>
+<hr />
+<p>点击 <strong>"Install"</strong> 开始安装 MySQL Server</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/setup-4.png" /></p>
+<hr />
+<p>安装完成后，勾选 <strong>"Run MySQL Configurator"</strong>，并点击 <strong>"Finish"</strong></p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/setup-5.png" /></p>
+<hr />
+<h2 id="mysql_1">配置 MySQL 服务器<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
+<p>使用 <strong>"MySQL Configurator"</strong> 配置 MySQL 服务器，点击 <strong>"Next"</strong> 继续</p>
+<p>note "运行 MySQL Configurator"</p>
+<div class="highlight"><pre><span></span><code>如果之前未勾选 **&quot;Run MySQL Configurator&quot;**，或是需要重新配置 MySQL 服务器，可以在 Windows
+开始菜单找到（或搜索）`MySQL 8.4 Configurator` 手动运行
+</code></pre></div>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-1.png" /></p>
+<hr />
+<h3 id="data-directory">数据目录（Data Directory）<a class="headerlink" href="#data-directory" title="Permanent link">&para;</a></h3>
+<p>设置 MySQL 服务器管理的数据存储目录，<strong>保持默认路径</strong>即可</p>
+<div class="admonition warning">
+<p class="admonition-title">不建议更改默认数据路径</p>
+<p>为了避免路径问题并方便故障排查，<strong>不建议更改默认数据路径！</strong></p>
+<ul>
+<li><strong>MySQL 及相关组件的默认安装目录（basedir）</strong>：<code>C:\Program Files\MySQL</code></li>
+<li><strong>MySQL 数据库等数据文件存放目录（datadir）</strong>：<code>C:\ProgramData\MySQL</code></li>
+</ul>
+</div>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-2.png" /></p>
+<hr />
+<h3 id="type-and-networking">类型与网络（Type and Networking）<a class="headerlink" href="#type-and-networking" title="Permanent link">&para;</a></h3>
+<p>选择默认的 <strong><code>Development Computer</code></strong>（开发计算机），并<strong>勾选</strong> <code>TCP/IP</code> 协议并保持 <code>3306/33060</code> 端口（Port）即可，无需任何修改</p>
+<div class="admonition warning">
+<p class="admonition-title">保持默认端口</p>
+<p>所有 MySQL 客户端/驱动都默认连接 <code>3306</code> 端口，非必要情况下（如端口冲突或安全策略等）务必保持默认的
+<code>3306/33060</code> 端口。如果更改默认端口，后续连接数据库时需显式指定端口。</p>
+</div>
+<details class="example">
+<summary>类型与网络选项说明 <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></summary>
+<p><strong>Server Configuration Type（服务器配置类型）</strong>：根据主机用途预分配 MySQL 实例的系统资源（CPU/内存/并发连接数等）。</p>
+<ul>
+<li><code>Development Computer</code>：不限于 MySQL 开发的一般计算机，MySQL 将占用最小内存。</li>
+<li><code>Server Computer</code>：专用于运行多个服务器应用的计算机，MySQL 将占用中等内存。</li>
+<li><code>Dedicated Computer</code>：专用于运行 MySQL 数据库的服务器，MySQL 将充分利用所有可用内存。</li>
+<li><code>Manual</code>：保留默认配置文件值，如果需要进行任何更改，必须手动编辑配置文件更新数值。</li>
+</ul>
+<hr />
+<p><strong>Connectivity（连接方式）</strong>：MySQL 服务器支持多种连接方式，包括 <code>TCP/IP</code>、<code>Named Pipes</code> 和 <code>Shared Memory</code>。</p>
+<ul>
+<li><code>TCP/IP</code>：通过网络协议通信，适用于分布式环境，标准 SQL 协议端口为 <code>3306</code>，X 协议端口 <code>33060</code> 用于 MySQL 文档存储（NoSQL）。</li>
+<li><code>Named Pipes</code>：基于命名管道的进程间通信（IPC）机制，仅限本地连接，比 TCP/IP 开销更低。</li>
+<li><code>Shared Memory</code>：通过内存共享实现进程间通信，仅限本地连接，速度最快但安全性最低。</li>
+</ul>
+<hr />
+<p><strong>Advanced Configuration（高级配置）</strong>：勾选后显示服务器 ID、表名大小写规则和日志等高级选项。</p>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-3.png" /></p>
+<hr />
+<h3 id="accounts-and-roles">账户与角色（Accounts and Roles）<a class="headerlink" href="#accounts-and-roles" title="Permanent link">&para;</a></h3>
+<p>在上方<strong>设置 Root 用户密码</strong>，下方的 MySQL User Accounts（MySQL 用户账户）无需配置</p>
+<div class="admonition note">
+<p class="admonition-title">密码强度与重置密码</p>
+<p>MySQL 用户密码要求最少为 4 个字符，建议使用<code>数字+大小写字母+特殊字符</code>等长字符串以提高密码强度。如果忘记 Root
+用户密码，可以参考 <a href="https://www.runoob.com/note/27730">MySQL 重置 root 密码（菜鸟教程）</a> 进行重置。</p>
+</div>
+<details class="example">
+<summary>账户与角色选项说明 <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></summary>
+<p><strong>Root 用户</strong>是数据库系统中的超级用户，拥有最高权限，可以对数据库实例进行管理和配置，包括创建用户和管理权限，数据库和表的创建、修改和删除，管理数据库实例和配置等。</p>
+<hr />
+<p><strong>MySQL User Accounts（MySQL 用户账户）</strong>用于添加数据库管理员、开发者或只读用户等身份角色，并限制特定用户对数据库的操作范围，以确保数据库的安全性和合规性。</p>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-4.png" /></p>
+<hr />
+<h3 id="windows-windows-service">Windows 服务（Windows Service）<a class="headerlink" href="#windows-windows-service" title="Permanent link">&para;</a></h3>
+<p>默认<strong>勾选 <code>Configure MySQL Server as a Windows Service</code></strong>（设置 MySQL 服务器作为 Windows 服务）即可，其中
+"Windows Service Name"（Windows 服务名称）无需修改，其他选项默认即可</p>
+<details class="example">
+<summary>Windows 服务选项说明 <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></summary>
+<p>在 Windows 平台上，MySQL 服务器可以作为操作系统管理的服务运行，并配置为开机时自动启动，持续在后台运行。默认以
+<code>Standard System Account</code>（标准系统账户）身份启动，如果需要配置权限，可以勾选 <code>Custom User</code>（自定义用户）。</p>
+<div class="admonition tip">
+<p>如果发现无法连接至 MySQL 服务器，应当首先检查 MySQL 服务（如 <code>MySQL84</code>）是否已启动</p>
+</div>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-5.png" /></p>
+<hr />
+<h3 id="server-file-permissions">服务器文件权限（Server File Permissions）<a class="headerlink" href="#server-file-permissions" title="Permanent link">&para;</a></h3>
+<p>默认<strong>选择第一项</strong>，将 MySQL 文件夹及文件的<strong>完全访问权限</strong>仅授予运行 Windows 服务的用户和管理员组</p>
+<details class="example">
+<summary>服务器文件权限选项说明 <sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></summary>
+<p>访问权限涉及 MySQL 服务器数据、配置和日志等文件（默认位于 <code>C:\ProgramData\MySQL\MySQL Server 8.4</code>），为了保护数据安全，此权限通常仅授予运行
+Windows 服务的用户和管理员组，普通用户无权访问和修改。</p>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-6.png" /></p>
+<hr />
+<h3 id="sample-databases">示例数据库（Sample Databases）<a class="headerlink" href="#sample-databases" title="Permanent link">&para;</a></h3>
+<p>根据需要选择是否创建示例数据库，可选 <code>Sakila</code> 和 <code>World</code> 数据库，以便快速上手和练习</p>
+<div class="admonition info">
+<p class="admonition-title">示例数据库简介</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><strong>Sakila 数据库</strong>  </p>
+<ul>
+<li>一个模拟 DVD 租赁商店的完整业务数据库</li>
+<li>包含电影库存、租赁记录、客户信息等 16 张表</li>
+</ul>
+<p>详见：<a href="https://dev.mysql.com/doc/sakila/en/">MySQL :: Sakila Sample Database</a></p>
+</li>
+<li>
+<p><strong>World 数据库</strong></p>
+<ul>
+<li>包含国家/城市/语言信息的简化全球数据集</li>
+<li>仅 3 张核心表（country/city/countrylanguage）</li>
+</ul>
+<p>详见：<a href="https://dev.mysql.com/doc/world-setup/en/">MySQL :: Setting Up the world Database</a></p>
+</li>
+</ul>
+</div>
+</div>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-7.png" /></p>
+<hr />
+<h3 id="apply-configuration">应用配置（Apply Configuration）<a class="headerlink" href="#apply-configuration" title="Permanent link">&para;</a></h3>
+<p>配置完成后，点击 <strong>"Execute"</strong> 应用配置更改，等待所有项目配置完成</p>
+<details class="warning">
+<summary>配置更改遇到问题或错误？</summary>
+<p>应用配置时，如果遇到某些问题或错误导致中断，请根据右侧 <strong><code>Log</code>（日志）栏中的报错信息</strong>，使用网络搜索可能的解决方案。</p>
+<p>例如，在 <code>Starting the server</code> 步骤出错可能是由于<strong>端口（3306）被占用</strong>导致无法正常启动 MySQL 服务，可以尝试找出并结束占用此端口的进程后重新应用配置。</p>
+<p>如果<strong>计算机名为特殊字符</strong>（如中文），建议更改为 ASCII 字符（如纯英文），否则在应用 MySQL 配置时可能会发生错误（提示 <code>file 'xxx-bin.index' not found</code>）。</p>
+<div class="admonition example">
+<p><strong>常见安装错误及解决方案可参考</strong>：<a href="faq.md">常见安装错误</a></p>
+</div>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-8.png" /></p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-9.png" /></p>
+<hr />
+<h3 id="configuration-complete">配置完成（Configuration Complete）<a class="headerlink" href="#configuration-complete" title="Permanent link">&para;</a></h3>
+<p>执行所有应用配置步骤后，安装和配置完成！</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/config-10.png" /></p>
+<hr />
+<h2 id="mysql_2">设置 MySQL 环境变量<a class="headerlink" href="#mysql_2" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">设置 MySQL 系统环境变量</p>
+<p>为了能够使用 CMD 和 PowerShell 等终端（也可以使用 <code>MySQL Command Line Client</code>）连接至 MySQL
+服务器，并使系统和其他应用程序能够定位到 MySQL 的执行文件，建议将 MySQL 的 <code>bin</code>
+路径（可执行文件目录）添加至系统环境变量中。</p>
+<div class="admonition note">
+<p>MySQL Server 默认的 <code>bin</code> 目录路径为：<code>C:\Program Files\MySQL\MySQL Server 8.4\bin</code></p>
+</div>
+</div>
+<p>在 Windows 搜索栏搜索 <strong>"环境变量"</strong>，并点击 <strong>"编辑系统环境变量"</strong>，打开系统环境变量配置</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/system-environment-variables-1.png" /></p>
+<hr />
+<p>在 <strong>"系统属性 &gt; 高级"</strong> 页面下点击 <strong>"环境变量"</strong>，并双击打开在 <strong>"环境变量 &gt; 系统变量"</strong> 下的 <strong>"Path"</strong> 变量:</p>
+<div class="grid">
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/system-environment-variables-2.png" /></p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/system-environment-variables-3.png" /></p>
+</div>
+<hr />
+<p>在右上方点击 <strong>"新建"</strong> 变量，并将值设为 MySQL Server 的 <strong><code>bin</code></strong> 目录路径</p>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/sysvar-mysql.png" /></p>
+<hr />
+<p>为了验证是否已正确配置，可以在终端中执行下列命令，如果提示如下版本信息则说明配置成功</p>
+<div class="highlight"><pre><span></span><code><span class="gp">PS&gt; </span><span class="n">mysql</span> <span class="n">-V</span>  <span class="c"># 或 mysql --version</span>
+</code></pre></div>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/mysql-version.png" /></p>
+<hr />
+<h2 id="mysql_3">连接 MySQL 服务器 [可选]<a class="headerlink" href="#mysql_3" title="Permanent link">&para;</a></h2>
+<p>打开终端，输入并执行下列命令，并输入 <strong>Root 用户密码</strong>进行登录</p>
+<div class="highlight"><pre><span></span><code><span class="gp">PS&gt; </span><span class="n">mysql</span> <span class="n">-u</span> <span class="n">root</span> <span class="n">-p</span>  <span class="c"># 或 mysql --user root --password</span>
+</code></pre></div>
+<details class="example" open="open">
+<summary>连接 MySQL 服务器命令参数说明</summary>
+<ul>
+<li><code>-h</code>, <code>--host</code>：指定服务器地址，默认为 <code>localhost</code></li>
+<li><code>-P</code>, <code>--port</code>：指定服务器端口，默认为 <code>3306</code></li>
+<li><code>-u</code>, <code>--user</code>：指定登录用户</li>
+<li><code>-p</code>, <code>--password</code>：指定用户密码</li>
+</ul>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/mysql-login-1.png" /></p>
+<hr />
+<p>如果提示如下信息则说明登录成功，可以在其中输入 <strong>MySQL 语句</strong>进行执行</p>
+<details class="tip">
+<summary>常用 MySQL 语句</summary>
+<div class="highlight"><span class="filename">数据库操作</span><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">DATABASES</span><span class="p">;</span><span class="w">                                </span><span class="c1">-- 查看所有数据库</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db_name</span><span class="p">;</span><span class="w">                       </span><span class="c1">-- 创建数据库</span>
+<span class="n">USE</span><span class="w"> </span><span class="n">db_name</span><span class="p">;</span><span class="w">                                   </span><span class="c1">-- 切换数据库</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db_name</span><span class="p">;</span><span class="w">                         </span><span class="c1">-- 删除数据库</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">db_name</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 修改数据库字符集</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">表操作</span><pre><span></span><code><span class="k">SHOW</span><span class="w"> </span><span class="n">TABLES</span><span class="p">;</span><span class="w">                                          </span><span class="c1">-- 查看当前数据库所有表</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">);</span><span class="w">         </span><span class="c1">-- 创建表</span>
+<span class="k">DESC</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span><span class="w">                                      </span><span class="c1">-- 查看表结构</span>
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span><span class="w">   </span><span class="c1">-- 修改表结构</span>
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span><span class="p">;</span><span class="w">                                </span><span class="c1">-- 删除表</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">                    </span><span class="c1">-- 查询数据（前 10 条）</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="p">);</span><span class="w">            </span><span class="c1">-- 插入数据</span>
+<span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">column1</span><span class="o">=</span><span class="n">value</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 更新数据</span>
+<span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w">               </span><span class="c1">-- 删除数据</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">实用命令</span><pre><span></span><code><span class="n">STATUS</span><span class="p">;</span><span class="w">  </span><span class="c1">-- 查看服务器状态</span>
+<span class="n">EXIT</span><span class="p">;</span><span class="w">    </span><span class="c1">-- 退出 MySQL 客户端</span>
+</code></pre></div>
+<ul>
+<li>
+<p><strong>其他常用 MySQL 语句可参考</strong>：<a href="https://www.runoob.com/mysql/mysql-command-manual.html">MySQL 命令大全 | 菜鸟教程</a></p>
+</li>
+<li>
+<p><strong>所有 MySQL 语句及用法详见官方文档</strong>：<a href="https://dev.mysql.com/doc/refman/8.4/en/sql-statements.html">MySQL :: MySQL 8.4 Reference Manual :: 15 SQL Statements</a></p>
+</li>
+</ul>
+</details>
+<p><img alt="" src="../../assets/images/4_excellent_labs/mysql_qxj/mysql-login-2.png" /></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://dev.mysql.com/doc/mysql-installer/en/server-type-network.html">MySQL :: MySQL Installer Guide :: 4.1.1 Type and Networking</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://dev.mysql.com/doc/mysql-installer/en/server-accounts-roles.html">MySQL :: MySQL Installer Guide :: 4.1.3 Accounts and Roles</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://dev.mysql.com/doc/mysql-installer/en/server-windows-service.html">MySQL :: MySQL Installer Guide :: 4.1.4 Windows Service</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://dev.mysql.com/doc/mysql-installer/en/server-file-permission-options.html">MySQL :: MySQL Installer Guide :: 4.1.5 Server File Permissions</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
