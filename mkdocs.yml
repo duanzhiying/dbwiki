@@ -1,6 +1,6 @@
 site_name: 数据库课程实验资源平台
 site_description: 数字化转型背景下数据库课程实验教学资源的共建共享
-site_url: https://gitee.com/kidzying/dbwiki
+site_url: https://github.com/duanzhiying/dbwiki
 theme:
   name: material
   features:
@@ -37,6 +37,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
   - attr_list
