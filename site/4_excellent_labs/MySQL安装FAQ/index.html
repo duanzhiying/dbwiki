@@ -9,16 +9,14 @@
         <meta name="description" content="数字化转型背景下数据库课程实验教学资源的共建共享">
       
       
-        <meta name="author" content="teacher">
+      
+        <link rel="canonical" href="https://duanzhiying.github.io/dbwiki/4_excellent_labs/MySQL%E5%AE%89%E8%A3%85FAQ/">
       
       
-        <link rel="canonical" href="https://duanzhiying.github.io/dbwiki/3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/">
+        <link rel="prev" href="../SQL%20IDE%E5%AE%89%E8%A3%85/">
       
       
-        <link rel="prev" href="../../2_enterprise_cases/ecommerce_%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/">
-      
-      
-        <link rel="next" href="../../4_excellent_labs/lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
+        <link rel="next" href="../%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>事务处理：死锁避免 - 数据库课程实验资源平台</title>
+        <title>常见安装错误 - 数据库课程实验资源平台</title>
       
     
     
@@ -79,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -116,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              事务处理：死锁避免
+              常见安装错误
             
           </span>
         </div>
@@ -397,20 +390,20 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -426,7 +419,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             避坑指南
@@ -437,39 +430,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    事务处理
-    
-  </span>
-  
-    
-  
-  
-    <span class="md-status md-status--approved"></span>
-  
-
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/" class="md-nav__link">
         
   
   
@@ -487,137 +451,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁产生的原因
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      预防策略
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="预防策略">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 资源有序分配
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 设置锁超时
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 使用合适的隔离级别
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      检测和解决
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="检测和解决">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁检测
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁处理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      最佳实践
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      扩展思考
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -634,20 +467,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -663,7 +496,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             实验示范
@@ -677,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4_excellent_labs/lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+      <a href="../lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
         
   
   
@@ -707,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4_excellent_labs/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" class="md-nav__link">
         
   
   
@@ -737,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4_excellent_labs/SQL%20IDE%E5%AE%89%E8%A3%85/" class="md-nav__link">
+      <a href="../SQL%20IDE%E5%AE%89%E8%A3%85/" class="md-nav__link">
         
   
   
@@ -764,10 +597,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../4_excellent_labs/MySQL%E5%AE%89%E8%A3%85FAQ/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -778,6 +618,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -790,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4_excellent_labs/%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+      <a href="../%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
         
   
   
@@ -820,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../4_excellent_labs/%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
         
   
   
@@ -944,127 +785,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      问题描述
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁产生的原因
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      预防策略
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="预防策略">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 资源有序分配
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 设置锁超时
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 使用合适的隔离级别
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      检测和解决
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="检测和解决">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁检测
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      死锁处理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      最佳实践
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      扩展思考
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1080,71 +800,11 @@
 
 
 
-<h1 id="_1">事务处理：死锁避免（教师版）<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>作者：teacher</p>
-</blockquote>
-<h2 id="_2">问题描述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>在高并发数据库系统中，死锁是常见的问题。当多个事务相互等待对方释放锁时，就会发生死锁，导致系统性能下降甚至服务中断。</p>
-<h2 id="_3">死锁产生的原因<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>资源竞争</strong>: 多个事务同时访问相同的数据资源</li>
-<li><strong>锁顺序不一致</strong>: 不同事务以不同顺序获取锁</li>
-<li><strong>长时间持有锁</strong>: 事务执行时间过长，锁持有时间过久</li>
-</ol>
-<h2 id="_4">预防策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 资源有序分配<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- 错误示例：可能导致死锁</span>
-<span class="c1">-- 事务A: 先锁用户表，再锁订单表</span>
-<span class="c1">-- 事务B: 先锁订单表，再锁用户表</span>
+  <h1>MySQL安装FAQ</h1>
 
-<span class="c1">-- 正确做法：统一锁顺序</span>
-<span class="c1">-- 所有事务都按相同顺序获取锁</span>
-<span class="k">BEGIN</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">orders</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">UPDATE</span><span class="p">;</span>
-<span class="k">COMMIT</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="2">2. 设置锁超时<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- MySQL</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">innodb_lock_wait_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
-
-<span class="c1">-- PostgreSQL</span>
-<span class="k">SET</span><span class="w"> </span><span class="n">lock_timeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;10s&#39;</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="3">3. 使用合适的隔离级别<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- 根据业务需求选择合适的隔离级别</span>
-<span class="c1">-- READ COMMITTED: 减少锁持有时间</span>
-<span class="k">SET</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="w"> </span><span class="k">ISOLATION</span><span class="w"> </span><span class="k">LEVEL</span><span class="w"> </span><span class="k">READ</span><span class="w"> </span><span class="k">COMMITTED</span><span class="p">;</span>
-</code></pre></div>
-<h2 id="_5">检测和解决<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">死锁检测<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1">-- MySQL 查看死锁信息</span>
-<span class="k">SHOW</span><span class="w"> </span><span class="n">ENGINE</span><span class="w"> </span><span class="n">INNODB</span><span class="w"> </span><span class="n">STATUS</span><span class="p">;</span>
-
-<span class="c1">-- PostgreSQL 查看锁等待</span>
-<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">pg_locks</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">granted</span><span class="p">;</span>
-</code></pre></div>
-<h3 id="_7">死锁处理<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>自动回滚</strong>: 数据库自动选择一个事务进行回滚</li>
-<li><strong>重试机制</strong>: 应用层实现重试逻辑</li>
-<li><strong>监控告警</strong>: 建立死锁监控和告警机制</li>
-</ol>
-<h2 id="_8">最佳实践<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<ol>
-<li>保持事务简短</li>
-<li>按固定顺序访问资源</li>
-<li>使用合适的索引减少锁范围</li>
-<li>考虑使用乐观锁替代悲观锁</li>
-<li>建立完善的监控体系</li>
-</ol>
-<h2 id="_9">扩展思考<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ul>
-<li>如何设计重试机制？</li>
-<li>乐观锁和悲观锁的适用场景？</li>
-<li>如何监控数据库死锁情况？</li>
-</ul>
+<div class="admonition quote">
+<p class="admonition-title">TODO：<a href="https://obelusod.feishu.cn/docx/SLX5ddyFeo2xYMxYn04ctVzxnXf">https://obelusod.feishu.cn/docx/SLX5ddyFeo2xYMxYn04ctVzxnXf</a></p>
+</div>
 
 
 

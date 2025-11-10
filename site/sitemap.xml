@@ -1,39 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/1_sql_pitfalls/syntax_groupby%E9%94%99%E8%AF%AF/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/contributing/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/2_enterprise_cases/ecommerce_%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/1_sql_pitfalls/syntax_groupby%E9%94%99%E8%AF%AF/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/2_enterprise_cases/ecommerce_%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/4_excellent_labs/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/4_excellent_labs/lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/MySQL%E5%AE%89%E8%A3%85FAQ/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/4_excellent_labs/%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/4_excellent_labs/%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/SQL%20IDE%E5%AE%89%E8%A3%85/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
     <url>
-         <loc>https://gitee.com/kidzying/dbwiki/5_course_designs/library_%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</loc>
-         <lastmod>2025-11-04</lastmod>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/</loc>
+         <lastmod>2025-11-10</lastmod>
+    </url>
+    <url>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/</loc>
+         <lastmod>2025-11-10</lastmod>
+    </url>
+    <url>
+         <loc>https://duanzhiying.github.io/dbwiki/4_excellent_labs/%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/</loc>
+         <lastmod>2025-11-10</lastmod>
+    </url>
+    <url>
+         <loc>https://duanzhiying.github.io/dbwiki/5_course_designs/library_%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</loc>
+         <lastmod>2025-11-10</lastmod>
     </url>
 </urlset>
