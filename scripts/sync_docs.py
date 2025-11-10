@@ -72,12 +72,30 @@ def sync_to_docs():
         print("❌ 错误: knowledge_base 目录不存在")
         return False
     
+    # 需要保留的文件（不在 knowledge_base 中，但需要在 docs 中）
+    files_to_preserve = ['contributing.md', 'index.md']
+    preserved_files = {}
+    
+    # 保存需要保留的文件
+    if docs_path.exists():
+        for file_name in files_to_preserve:
+            file_path = docs_path / file_name
+            if file_path.exists():
+                preserved_files[file_name] = file_path.read_text(encoding='utf-8')
+                print(f"💾 保留文件: {file_name}")
+    
     # 清空并重建 docs 目录
     if docs_path.exists():
         shutil.rmtree(docs_path)
     
     # 复制文件并验证
     shutil.copytree(kb_path, docs_path)
+    
+    # 恢复保留的文件
+    for file_name, content in preserved_files.items():
+        file_path = docs_path / file_name
+        file_path.write_text(content, encoding='utf-8')
+        print(f"✅ 恢复文件: {file_name}")
     
     # 验证同步的文件
     validation_results = []
