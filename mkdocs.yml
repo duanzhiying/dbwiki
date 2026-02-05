@@ -19,8 +19,10 @@ nav:
     - 电商优化: 2_enterprise_cases/ecommerce_查询优化.md
   - 避坑指南: 
     - 事务处理: 3_avoidance_guides/transaction_死锁避免.md
-  - 实验示范: 
+  - 实验示范:
     - 基础查询: 4_excellent_labs/lab1_基础查询.md
+    - Java 连接 MySQL: 4_excellent_labs/lab2_java_mysql_connection_demo.md
+    - Python 连接 MySQL: 4_excellent_labs/lab3_python_mysql_connection_demo.md
     - MySQL安装与配置指南: 4_excellent_labs/MySQL安装与配置指南.md
     - SQL IDE安装: 4_excellent_labs/SQL IDE安装.md
     - MySQL安装FAQ: 4_excellent_labs/MySQL安装FAQ.md

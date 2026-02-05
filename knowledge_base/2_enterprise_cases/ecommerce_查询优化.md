@@ -8,6 +8,7 @@ author: teacher
 date: 2024-12-19
 tags: [企业案例, 查询优化, 电商, 性能]
 status: approved
+updated: 2024-12-19
 ---
 
 # 电商平台数据库查询优化实战

@@ -8,6 +8,7 @@ author: teacher
 date: 2024-12-19
 tags: [语法错误, 常见问题, group by]
 status: approved
+updated: 2024-12-19
 ---
 
 # GROUP BY子句使用错误

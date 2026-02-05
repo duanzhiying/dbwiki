@@ -8,10 +8,12 @@ author: 覃修交
 date: 2025-08-20
 tags: [MySQL, IDE, 安装, 配置]
 status: approved
+updated: 2025-08-20
 ---
 
 # SQL IDE 安装
 > 作者：覃修交，原文来源：[Obelisk Docs：安装 SQL IDE](https://obelus.cc/guide/mysql/ide/)，本文按课程规范整理并补充注意事项。
+> 更新日期：2025-08-20
 
 
 

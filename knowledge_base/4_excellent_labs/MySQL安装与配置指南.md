@@ -8,7 +8,12 @@ author: 覃修交
 date: 2025-08-20
 tags: [MySQL, 安装, 配置]
 status: approved
+updated: 2025-08-20
 ---
+
+# MySQL 安装与配置指南
+> 作者： 覃修交
+> 更新日期： 2025-08-20
 
 访问 [MySQL Community Downloads 官网](https://dev.mysql.com/downloads/mysql/)，选择最新的 `8.4.x LTS`（长期支持）版本和 `Microsoft Windows` 平台，下载 `MSI Installer` 安装程序
 

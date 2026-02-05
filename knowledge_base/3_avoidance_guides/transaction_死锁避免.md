@@ -8,6 +8,7 @@ author: teacher
 date: 2024-12-19
 tags: [事务处理, 死锁, 并发控制]
 status: approved
+updated: 2024-12-19
 ---
 
 # 事务处理：死锁避免（教师版）

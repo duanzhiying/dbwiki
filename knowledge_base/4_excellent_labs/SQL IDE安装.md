@@ -8,6 +8,7 @@ author: 覃修交
 date: 2025-08-20
 tags: [MySQL, IDE, 安装, 配置]
 status: approved
+updated: 2025-08-20
 ---
 
 # SQL IDE 安装

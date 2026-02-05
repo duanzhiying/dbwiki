@@ -8,10 +8,14 @@ author: student
 date: 2024-12-19
 tags: [课程设计, 图书管理, 数据库应用]
 status: approved
+updated: 2024-12-19
 ---
 
-# 课程设计：图书管理系统（学生版）
-> 作者：student
+# 课程设计：图书管理系统
+
+> 作者： student
+更新日期： 2026-02-05
+
 
 
 ## 项目概述

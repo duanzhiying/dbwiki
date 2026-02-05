@@ -8,10 +8,12 @@ author: student
 date: 2024-12-19
 tags: [基础查询, 实验示范]
 status: approved
+updated: 2024-12-19
 ---
 
 # 实验示范：基础查询（学生版）
 > 作者：student
+> 更新日期：2024-12-19
 
 
 ## 实验目标
