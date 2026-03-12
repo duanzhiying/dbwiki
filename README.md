@@ -258,7 +258,7 @@ TODO
 ## 联系方式
 
 - **项目维护者**: kidzying
-- **反馈渠道**: GitCode Issues
+- **反馈渠道**: GitCode Issues or 联系助教
 - **邮件**: kidzying@163.com
 
 ---
