@@ -5,8 +5,8 @@
 **项目名称**: 数据库课程实验资源平台 (dbwiki)
 **项目性质**: 师生共建的数据库实验课程教改项目成果展示平台
 **技术架构**: MkDocs + Material主题 + RAG知识问答（规划中）
-**部署方式**: Vercel静态部署
-**代码管理**: GitCode主仓库 + Gitee/GitHub镜像
+**部署方式**: 腾讯云轻量级服务器部署
+**代码管理**: GitCode主仓库 + GitHub镜像
 
 ### 核心目标
 1. **教学资源共建共享**: 建立标准化的数据库实验教学资源库
@@ -46,7 +46,7 @@ dbwiki/
 - **Markdown扩展**: pymdown-extensions
 - **构建工具**: Python 3.x
 - **版本控制**: Git
-- **部署平台**: Vercel
+- **部署平台**: 腾讯云轻量级服务器 + Gitcode WebHook
 
 ## 项目构造顺序
 
@@ -137,17 +137,13 @@ dbwiki/
 
 ## 部署方式
 
-### Vercel部署（推荐）
-1. 登录 Vercel 账号
-2. 导入 GitCode 仓库
-3. 配置构建命令：`mkdocs build --clean`
-4. 配置输出目录：`site`
-5. 部署完成后获取访问地址
-
 ### GitHub Pages部署
 1. 启用 GitHub Actions
 2. 配置 `.github/workflows/mkdocs-gh-pages.yml`
 3. 推送更改后自动构建并部署
+
+### 腾讯云轻量级服务器部署
+TODO
 
 ## 贡献指南
 
@@ -267,6 +263,6 @@ dbwiki/
 
 ---
 
-*最后更新: 2026-02-05*
+*最后更新: 2026-03-12*
 *版本: v1.1*
 *维护者: kidzying*
