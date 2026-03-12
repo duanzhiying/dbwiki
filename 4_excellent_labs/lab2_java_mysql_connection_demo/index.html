@@ -1,0 +1,1782 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数字化转型背景下数据库课程实验教学资源的共建共享">
+      
+      
+        <meta name="author" content="['汪辉']">
+      
+      
+        <link rel="canonical" href="https://duanzhiying.github.io/dbwiki/4_excellent_labs/lab2_java_mysql_connection_demo/">
+      
+      
+        <link rel="prev" href="../lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/">
+      
+      
+        <link rel="next" href="../lab3_python_mysql_connection_demo/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Java 连接 MySQL Workbench 教程 - 数据库课程实验资源平台</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-mysql-workbench" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="数据库课程实验资源平台" class="md-header__button md-logo" aria-label="数据库课程实验资源平台" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数据库课程实验资源平台
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Java 连接 MySQL Workbench 教程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="数据库课程实验资源平台" class="md-nav__button md-logo" aria-label="数据库课程实验资源平台" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    数据库课程实验资源平台
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    错误SQL点评
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    错误SQL点评
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1_sql_pitfalls/syntax_groupby%E9%94%99%E8%AF%AF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    语法错误
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    企业案例
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    企业案例
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2_enterprise_cases/ecommerce_%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电商优化
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    避坑指南
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    避坑指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3_avoidance_guides/transaction_%E6%AD%BB%E9%94%81%E9%81%BF%E5%85%8D/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    事务处理
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验示范
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    实验示范
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab1_%E5%9F%BA%E7%A1%80%E6%9F%A5%E8%AF%A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础查询
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java 连接 MySQL
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java 连接 MySQL
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、准备工作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、准备工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 安装工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、配置数据库（使用 MySQL Workbench）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、创建 Maven 项目，连接数据库并执行 SQL 语句
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、创建 Maven 项目，连接数据库并执行 SQL 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、打开 IDEA，点击文件—新建—项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、选择 Maven，点击创建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、双击打开 pom.xml,复制粘贴下方代码块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-javajava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、选择 Java—新建—Java 类，自由命名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5、复制粘贴如下代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6、注意！！！如遇错误可自行修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7、填写数据库名称、账号和密码，用 SQL 语句作查询操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8、连接且成功查询（例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、彩蛋：使用 IntelliJ IDEA，无代码版
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、彩蛋：使用 IntelliJ IDEA，无代码版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、打开 IntelliJ IDEA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、新建项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、自由命名项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、选择 Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5、选择新建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6、找到 MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7、输入 MySQL Workbench 用户名、密码和所要连接的数据库名称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8、成功连接数据库，直接输入 SQL 语句执行即可（例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3_python_mysql_connection_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python 连接 MySQL
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MySQL安装与配置指南
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SQL%20IDE%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL IDE安装
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MySQL%E5%AE%89%E8%A3%85FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MySQL安装FAQ
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%95%99%E6%9D%90%E6%A1%88%E4%BE%8BMySQL%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    触发器与存储过程：教材案例的MySQL实现
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E5%AF%BC%E5%85%A5%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系数据库：外部数据导入
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课设案例
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    课设案例
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5_course_designs/library_%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图书系统
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--approved"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、准备工作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、准备工作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 安装工具
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、配置数据库（使用 MySQL Workbench）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、创建 Maven 项目，连接数据库并执行 SQL 语句
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、创建 Maven 项目，连接数据库并执行 SQL 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、打开 IDEA，点击文件—新建—项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、选择 Maven，点击创建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pomxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、双击打开 pom.xml,复制粘贴下方代码块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-javajava" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、选择 Java—新建—Java 类，自由命名
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5、复制粘贴如下代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6、注意！！！如遇错误可自行修改
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7、填写数据库名称、账号和密码，用 SQL 语句作查询操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8、连接且成功查询（例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、彩蛋：使用 IntelliJ IDEA，无代码版
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、彩蛋：使用 IntelliJ IDEA，无代码版">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1、打开 IntelliJ IDEA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2、新建项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3、自由命名项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4、选择 Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5、选择新建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6、找到 MySQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7、输入 MySQL Workbench 用户名、密码和所要连接的数据库名称
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8、成功连接数据库，直接输入 SQL 语句执行即可（例）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="java-mysql-workbench">Java 连接 MySQL Workbench 教程<a class="headerlink" href="#java-mysql-workbench" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>作者：汪辉（24级大数据管理与应用2班）
+更新日期：2026-01-05</p>
+</blockquote>
+<h2 id="_1">一、概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本教程将指导你如何使用 Java 连接 MySQL 数据库，而 MySQL Workbench 作为数据库管理工具，用于创建和管理数据库结构。我们将使用 IntelliJ IDEA 来帮助实现 Java 与 MySQL 的连接。</p>
+<h2 id="_2">二、准备工作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 安装工具<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Java 开发环境（JDK）</strong>：确保已安装 JDK（建议使用 JDK 8 或以上版本）。</p>
+</li>
+<li>
+<p><strong>MySQL 数据库</strong>：安装 MySQL Server。</p>
+</li>
+<li>
+<p><strong>MySQL Workbench</strong>：用于可视化管理 MySQL 数据库。</p>
+</li>
+<li>
+<p><strong>IntelliJ IDEA</strong>。</p>
+</li>
+</ul>
+<h2 id="mysql-workbench">三、配置数据库（使用 MySQL Workbench）<a class="headerlink" href="#mysql-workbench" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>打开 MySQL Workbench。</p>
+</li>
+<li>
+<p>连接本地或远程的 MySQL 服务器。</p>
+</li>
+<li>
+<p>准备数据库。</p>
+</li>
+</ol>
+<h2 id="maven-sql">四、创建 Maven 项目，连接数据库并执行 SQL 语句<a class="headerlink" href="#maven-sql" title="Permanent link">&para;</a></h2>
+<h3 id="1-idea">1、打开 IDEA，点击文件—新建—项目<a class="headerlink" href="#1-idea" title="Permanent link">&para;</a></h3>
+<p><img alt="打开 IDEA 新建项目" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20202256.png" /></p>
+<h3 id="2-maven">2、选择 Maven，点击创建<a class="headerlink" href="#2-maven" title="Permanent link">&para;</a></h3>
+<p><img alt="选择 Maven" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20202427.png" /></p>
+<h3 id="3-pomxml">3、双击打开 pom.xml,复制粘贴下方代码块<a class="headerlink" href="#3-pomxml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;groupId&gt;</span>org.example<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>mysql-connect-demo<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<span class="w">        </span><span class="nt">&lt;maven.compiler.source&gt;</span>8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+<span class="w">        </span><span class="nt">&lt;maven.compiler.target&gt;</span>8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+<span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+<span class="w">            </span><span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">            </span><span class="nt">&lt;version&gt;</span>8.0.33<span class="nt">&lt;/version&gt;</span><span class="w"> </span><span class="cm">&lt;!-- 无空格的有效版本 --&gt;</span>
+<span class="w">            </span><span class="nt">&lt;scope&gt;</span>runtime<span class="nt">&lt;/scope&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+<span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;source&gt;</span>25<span class="nt">&lt;/source&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;target&gt;</span>25<span class="nt">&lt;/target&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div>
+<p><img alt="编辑 pom.xml" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20202635.png" /></p>
+<h3 id="4-javajava">4、选择 Java—新建—Java 类，自由命名<a class="headerlink" href="#4-javajava" title="Permanent link">&para;</a></h3>
+<p><img alt="新建 Java 类" src="../../assets/images/4_excellent_labs/java_mysql/image.png" /></p>
+<h3 id="5">5、复制粘贴如下代码<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span><span class="w"> </span><span class="nn">mysql</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.PreparedStatement</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.ResultSet</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.SQLException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">mysqlutil</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jdbc:mysql://localhost:3306/online_sales_system?serverTimezone=Asia/Shanghai&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;root&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wh944555&quot;</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="n">PreparedStatement</span><span class="w"> </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">        </span><span class="n">ResultSet</span><span class="w"> </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="s">&quot;com.mysql.cj.jdbc.Driver&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;数据库连接成功，查询全表数据：&quot;</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// 查items表所有数据</span>
+<span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;SELECT item_id, item_name FROM items&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// 补充实际字段名</span>
+<span class="w">            </span><span class="n">pstmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">prepareStatement</span><span class="p">(</span><span class="n">sql</span><span class="p">);</span>
+<span class="w">            </span><span class="n">rs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">executeQuery</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// 遍历结果集（用getString获取item_id的字符串值）</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="p">.</span><span class="na">next</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">itemId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;item_id&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 关键修正</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">itemName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">&quot;item_name&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 按实际字段类型选择方法</span>
+<span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;商品ID：&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">itemId</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;，商品名称：&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">itemName</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ClassNotFoundException</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// 关闭资源</span>
+<span class="w">            </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rs</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">rs</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pstmt</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">pstmt</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">conn</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">SQLException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="6">6、注意！！！如遇错误可自行修改<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p><img alt="错误示例" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20203811.png" /></p>
+<h3 id="7-sql">7、填写数据库名称、账号和密码，用 SQL 语句作查询操作<a class="headerlink" href="#7-sql" title="Permanent link">&para;</a></h3>
+<p><img alt="填写数据库信息" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20204250.png" /></p>
+<h3 id="8">8、连接且成功查询（例）<a class="headerlink" href="#8" title="Permanent link">&para;</a></h3>
+<p><img alt="查询结果" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20201816.png" /></p>
+<h2 id="intellij-idea">五、彩蛋：使用 IntelliJ IDEA，无代码版<a class="headerlink" href="#intellij-idea" title="Permanent link">&para;</a></h2>
+<h3 id="1-intellij-idea">1、打开 IntelliJ IDEA<a class="headerlink" href="#1-intellij-idea" title="Permanent link">&para;</a></h3>
+<p><img alt="打开 IDEA" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20124914.png" /></p>
+<h3 id="2">2、新建项目<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p><img alt="新建项目" src="../../assets/images/4_excellent_labs/java_mysql/image.png" /></p>
+<h3 id="3">3、自由命名项目<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><img alt="命名项目" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20125557.png" /></p>
+<h3 id="4-database">4、选择 Database<a class="headerlink" href="#4-database" title="Permanent link">&para;</a></h3>
+<p><img alt="选择 Database" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20125903.png" /></p>
+<h3 id="5_1">5、选择新建<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h3>
+<p><img alt="新建数据库连接" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20130035.png" /></p>
+<h3 id="6-mysql">6、找到 MySQL<a class="headerlink" href="#6-mysql" title="Permanent link">&para;</a></h3>
+<p><img alt="选择 MySQL" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20130206.png" /></p>
+<h3 id="7-mysql-workbench">7、输入 MySQL Workbench 用户名、密码和所要连接的数据库名称<a class="headerlink" href="#7-mysql-workbench" title="Permanent link">&para;</a></h3>
+<p><img alt="输入数据库信息" src="../../assets/images/4_excellent_labs/java_mysql/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-01-04%20130430.png" /></p>
+<h3 id="8-sql">8、成功连接数据库，直接输入 SQL 语句执行即可（例）<a class="headerlink" href="#8-sql" title="Permanent link">&para;</a></h3>
+<p><img alt="执行 SQL 语句" src="../../assets/images/4_excellent_labs/java_mysql/image.png" /></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
