@@ -259,7 +259,7 @@ TODO
 
 - **项目维护者**: kidzying
 - **反馈渠道**: GitCode Issues
-- **邮件**: [项目相关邮件地址]
+- **邮件**: kidzying@163.com
 
 ---
 
