@@ -25,6 +25,7 @@ nav:
     - Python 连接 MySQL: 4_excellent_labs/lab3_python_mysql_connection_demo.md
     - MySQL安装与配置指南: 4_excellent_labs/MySQL安装与配置指南.md
     - SQL IDE安装: 4_excellent_labs/SQL IDE安装.md
+    - DataGrip安装与使用参考: 4_excellent_labs/DataGrip安装与使用参考.md
     - MySQL安装FAQ: 4_excellent_labs/MySQL安装FAQ.md
     - 触发器与存储过程：教材案例的MySQL实现: 4_excellent_labs/触发器与存储过程教材案例MySQL实现.md
     - 关系数据库：外部数据导入: 4_excellent_labs/外部数据导入方法.md

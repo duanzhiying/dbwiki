@@ -68,7 +68,7 @@ updated: 2025-08-20
 
     :material-home-circle-outline:{ .lg .middle } **官方网站**：<https://www.mysql.com/products/workbench>
 
-![](../../assets/images/mysql/ide-mysql-workbench.png)
+![](../assets/images/4_excellent_labs/mysql_qxj/ide-mysql-workbench.png)
 
 ---
 
@@ -110,8 +110,11 @@ updated: 2025-08-20
 
     :material-home-circle-outline:{ .lg .middle } **官方网站**：<https://www.jetbrains.com/datagrip>
 
-![](../../assets/images/mysql/ide-datagrip.png)
+![](../assets/images/4_excellent_labs/mysql_qxj/ide-datagrip.png)
 
+
+`DataGrip`的下载安装可参考：[DataGrip 安装与使用参考](DataGrip安装与使用参考.md)
+    
 ---
 
 ### DBeaver
@@ -149,7 +152,7 @@ updated: 2025-08-20
 
     :material-home-circle-outline:{ .lg .middle } **官方网站**：<https://dbeaver.io>
 
-![](../../assets/images/mysql/ide-dbeaver.png)
+![](../assets/images/4_excellent_labs/mysql_qxj/ide-dbeaver.png)
 
 ---
 
@@ -187,7 +190,7 @@ updated: 2025-08-20
 
     :material-home-circle-outline:{ .lg .middle } **官方网站**：<https://www.heidisql.com>
 
-![](../../assets/images/mysql/ide-heidisql.png)
+![](../assets/images/4_excellent_labs/mysql_qxj/ide-heidisql.png)
 
 ---
 
@@ -225,7 +228,7 @@ updated: 2025-08-20
 
     :material-home-circle-outline:{ .lg .middle } **官方网站**：<https://www.phpmyadmin.net>
 
-![](../../assets/images/mysql/ide-phpmyadmin.png)
+![](../assets/images/4_excellent_labs/mysql_qxj/ide-phpmyadmin.png)
 
 ---
 
