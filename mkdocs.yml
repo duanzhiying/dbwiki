@@ -31,6 +31,8 @@ nav:
     - 关系数据库：外部数据导入: 4_excellent_labs/外部数据导入方法.md
   - 课设案例: 
     - 图书系统: 5_course_designs/library_管理系统.md
+    - 大创管理系统: 5_course_designs/大创管理系统.md
+    - 智能药品管理与过期预警系统: 5_course_designs/智能药品管理与过期预警系统.md
 
 plugins:
   - search

@@ -32,3 +32,8 @@ site/
 ### Logs ###
 *.log
 logs/
+
+### Virtual Env ###
+venv/
+.venv/
+env/
